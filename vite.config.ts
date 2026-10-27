@@ -1,11 +1,12 @@
-import { defineConfig } from 'vitest/config'
+import {defineConfig} from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import {loadEnv} from 'vite'
+import {resolve} from 'path'
+import {localApi} from './server/vite-api'
 
-export default defineConfig({
-  plugins: [vue()],
-  resolve: { alias: { '@': resolve(__dirname, 'src') } },
-  build: { outDir: 'dist', emptyOutDir: true },
-  server: { proxy: { '/api': 'http://127.0.0.1:8787' } },
-  test: { environment: 'node' }
-})
+export default defineConfig(({mode}) => ({
+    plugins: [vue(), localApi(loadEnv(mode, process.cwd(), ''))],
+    resolve: {alias: {'@': resolve(__dirname, 'src')}},
+    build: {outDir: 'dist', emptyOutDir: true},
+    test: {environment: 'node'}
+}))

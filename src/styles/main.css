@@ -1,20 +1,7 @@
-:root {
-  --bg: #0b1324;
-  --panel: #111a33;
-  --border: #1e2a45;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --danger: #ef4444;
-}
-* { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-a { color: var(--accent); }
-button { background:var(--accent); color:#fff; border:none; padding:.5rem 1rem; border-radius:6px; cursor:pointer; }
-button:hover { background:var(--accent-hover); }
-button:disabled { opacity:.5; cursor:not-allowed; }
-input { background:#0f172a; color:var(--text); border:1px solid var(--border); padding:.5rem; border-radius:6px; }
-.card { background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:1rem; }
-.muted { color:var(--muted); }
-@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+/* Keep the cascade explicit: foundation → shell → reusable UI → page layouts. */
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './pages.css';
+@import './beatmaps.css';

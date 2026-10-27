@@ -1,1 +1,1 @@
-{"root":["./vite.config.ts","./worker/index.ts"],"version":"5.9.3"}
+{"root":["./vite.config.ts","./worker/index.ts","./server/beatmap-api.ts","./server/osu.ts","./server/vercel.ts","./server/vite-api.ts","./api/beatmap.ts","./api/search.ts"],"version":"5.9.3"}
