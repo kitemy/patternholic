@@ -10,5 +10,5 @@
     "types": ["node"],
     "noEmit": true
   },
-  "include": ["vite.config.ts", "worker/**/*.ts", "server/**/*.ts", "api/**/*.ts"]
+  "include": ["vite.config.ts", "worker/**/*.ts", "server/**/*.ts", "api/**/*.ts", "api/search.js"]
 }
