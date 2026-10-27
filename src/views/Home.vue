@@ -12,7 +12,7 @@
           <AppIcon name="arrow-right"/>
         </a>
       </div>
-      <figure class="pattern-study" aria-label="Illustration of a jump pattern with six connected hit circles">
+      <figure class="pattern-study" aria-label="Illustration of a tilted star jump pattern with five connected hit circles">
         <div class="study-heading">
           <span>Pattern study</span>
           <span class="study-index">001 / JUMPS</span>
@@ -24,31 +24,27 @@
             </pattern>
           </defs>
           <rect x="0" y="0" width="480" height="285" fill="url(#playfield-grid)"/>
-          <path class="pattern-trail" d="M72 204 152 80 240 194 316 66 400 154 354 228"/>
+          <path class="pattern-trail" d="M256 31 293 241 139 93 350 123 162 223 256 31"/>
           <g class="hit-circle hit-circle--faded">
-            <circle cx="72" cy="204" r="25"/>
-            <text x="72" y="204">1</text>
+            <circle cx="256" cy="31" r="25"/>
+            <text x="256" y="31">1</text>
           </g>
           <g class="hit-circle hit-circle--faded">
-            <circle cx="152" cy="80" r="25"/>
-            <text x="152" y="80">2</text>
+            <circle cx="293" cy="241" r="25"/>
+            <text x="293" y="241">2</text>
           </g>
           <g class="hit-circle">
-            <circle cx="240" cy="194" r="25"/>
-            <text x="240" y="194">3</text>
+            <circle cx="139" cy="93" r="25"/>
+            <text x="139" y="93">3</text>
           </g>
-          <circle class="approach-circle" cx="316" cy="66" r="43"/>
+          <circle class="approach-circle" cx="350" cy="123" r="43"/>
           <g class="hit-circle hit-circle--active">
-            <circle cx="316" cy="66" r="25"/>
-            <text x="316" y="66">4</text>
+            <circle cx="350" cy="123" r="25"/>
+            <text x="350" y="123">4</text>
           </g>
           <g class="hit-circle">
-            <circle cx="400" cy="154" r="25"/>
-            <text x="400" y="154">5</text>
-          </g>
-          <g class="hit-circle hit-circle--faded">
-            <circle cx="354" cy="228" r="25"/>
-            <text x="354" y="228">6</text>
+            <circle cx="162" cy="223" r="25"/>
+            <text x="162" y="223">5</text>
           </g>
         </svg>
         <figcaption class="study-caption">
