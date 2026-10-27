@@ -16,10 +16,10 @@
       <span v-if="expanded">osu! page</span>
     </a>
     <a v-if="beatmap.downloadAvailable" class="map-action"
-       :href="`https://osu.ppy.sh/beatmapsets/${beatmap.id}/download`"
+       :href="`https://mirror.hinamizawa.ai/api/v1/hinai/d/${beatmap.id}`"
        target="_blank" rel="noopener noreferrer"
-       :aria-label="`Download ${beatmap.title} from osu! (sign-in may be required)`"
-       title="Download from osu! · sign-in may be required">
+       :aria-label="`Download ${beatmap.title} from the hinai beatmap mirror`"
+       title="Download .osz from the hinai beatmap mirror">
       <AppIcon name="download"/>
       <span v-if="expanded">Download</span>
     </a>
