@@ -2,7 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/beatmapset/:id", "destination": "/api/beatmapset?id=:id" },
+    { "source": "/api/beatmapset/:id", "destination": "/api/beatmap?id=:id" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

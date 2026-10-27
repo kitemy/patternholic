@@ -1,4 +1,4 @@
-import {OsuError, type OsuClient} from './osu'
+import {OsuError, type OsuClient} from './osu.js'
 
 export async function beatmapApi(url: URL, method: string, client: OsuClient): Promise<Response | null> {
     const path = url.pathname

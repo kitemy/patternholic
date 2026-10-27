@@ -1,6 +1,6 @@
 import type {VercelRequest, VercelResponse} from '@vercel/node'
-import {createOsuClient} from './osu'
-import {beatmapApi} from './beatmap-api'
+import {createOsuClient} from './osu.js'
+import {beatmapApi} from './beatmap-api.js'
 
 const client = createOsuClient(() => process.env)
 
