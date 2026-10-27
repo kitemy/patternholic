@@ -94,18 +94,18 @@ function analyze(map) {
   return { algorithmVersion: ALG, score, metrics, events, warnings };
 }
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
   if (req.method !== 'POST') return res.status(405).end(JSON.stringify({ error: 'method' }));
-  let body = '';
-  req.on('data', c => body += c);
-  req.on('end', () => {
-    try {
-      const { content } = JSON.parse(body || '{}');
-      if (!content) return res.status(400).end(JSON.stringify({ error: 'missing content' }));
-      const map = parseOsu(String(content));
-      const result = analyze(map);
-      res.end(JSON.stringify({ ...result, metadata: map.metadata, mode: map.mode }));
-    } catch (e) { res.status(500).end(JSON.stringify({ error: e.message })); }
-  });
-};
+  try {
+    let body = req.body;
+    if (typeof body === 'string') body = JSON.parse(body || '{}');
+    const { content } = body || {};
+    if (!content) return res.status(400).end(JSON.stringify({ error: 'missing content' }));
+    const map = parseOsu(String(content));
+    const result = analyze(map);
+    res.end(JSON.stringify({ ...result, metadata: map.metadata, mode: map.mode }));
+  } catch (e) {
+    res.status(500).end(JSON.stringify({ error: e.message }));
+  }
+}

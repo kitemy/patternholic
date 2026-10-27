@@ -1,7 +1,7 @@
 export default async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   try {
-    const id = String(req.query.id || new URL(req.url, 'http://x').pathname.split('/').pop() || '');
+    const id = String(req.query.id || '');
     if (!/^\d+$/.test(id)) return res.status(400).end(JSON.stringify({error:'Missing or invalid id'}));
     const cid = process.env.OSU_CLIENT_ID, sec = process.env.OSU_CLIENT_SECRET;
     if (!cid || !sec) return res.status(500).end(JSON.stringify({error:'osu! API not configured'}));
