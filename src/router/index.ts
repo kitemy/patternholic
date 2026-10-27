@@ -4,7 +4,7 @@ import Search from '@/views/Search.vue'
 import BeatmapDetail from '@/views/BeatmapDetail.vue'
 import Analysis from '@/views/Analysis.vue'
 import Rankings from '@/views/Rankings.vue'
-import About from '@/views/About.vue'
+import Analyze from '@/views/Analyze.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,7 +19,7 @@ const router = createRouter({
         {path: '/beatmap/:id', component: BeatmapDetail},
         {path: '/analysis', component: Analysis},
         {path: '/rankings', component: Rankings},
-        {path: '/about', component: About}
+        {path: '/analyze', component: Analyze},
     ]
 })
 export default router
