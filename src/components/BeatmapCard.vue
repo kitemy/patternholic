@@ -3,7 +3,7 @@
     <div class="beatmap-card-art">
       <BeatmapCover :src="beatmap.cardCoverUrl || beatmap.coverUrl"/>
       <div class="beatmap-card-badges">
-        <span class="ranked-badge"><AppIcon name="check"/> Ranked</span>
+        <div class="map-content-labels"><span class="ranked-badge"><AppIcon name="check"/> Ranked</span><span v-if="beatmap.explicit" class="explicit-badge">Explicit</span></div>
         <div class="map-quick-stats"><span><AppIcon name="clock"/>{{
             formatLength(longestLength)
           }}</span><span>{{ formatNumber(beatmap.bpm) }} BPM</span></div>

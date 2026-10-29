@@ -17,6 +17,9 @@
     --color-on-accent: #192519;
     --color-error: #efb0a8;
     --color-error-bg: #2b211f;
+    --color-gold: #e5cd87;
+    --color-gold-bg: #302d20;
+    --color-gold-border: #62583a;
     --difficulty-color: var(--color-accent);
 
     /* Type, spacing, and shape */
