@@ -16,8 +16,10 @@
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "@vercel/analytics": "^2.0.1",
     "hono": "^4.6.0",
+    "osu-pp": "^0.1.0",
     "vue": "^3.5.0",
     "vue-router": "^4.4.0"
   },

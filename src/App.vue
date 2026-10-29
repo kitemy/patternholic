@@ -17,6 +17,7 @@
           <RouterLink to="/search">Explore</RouterLink>
           <RouterLink to="/rankings">Rankings</RouterLink>
           <RouterLink to="/analyze">Analyze</RouterLink>
+          <RouterLink to="/recommendations">Recommendations</RouterLink>
         </div>
         <span class="nav-caption">A closer look at rhythm</span>
       </nav>
