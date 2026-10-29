@@ -89,7 +89,6 @@ export function normalizeBeatmapset(raw: unknown, detail = false): Beatmapset | 
     return {
         id: set.id, title: text(set.title, 'Untitled'), artist: text(set.artist, 'Unknown artist'),
         creator: text(set.creator, 'Unknown mapper'), creatorId: numeric(set.user_id),
-        explicit: set.nsfw === true,
         coverUrl: mediaUrl(covers['cover@2x']) ?? mediaUrl(covers.cover),
         cardCoverUrl: mediaUrl(covers['card@2x']) ?? mediaUrl(covers.card) ?? mediaUrl(covers.cover),
         previewUrl: mediaUrl(set.preview_url), bpm: numeric(set.bpm),
@@ -199,7 +198,7 @@ export function createOsuClient(credentials: () => OsuCredentials, request: type
                 throw new OsuError(400, 'INVALID_SEARCH', 'Please use a shorter search and a supported sort order.')
             }
             // These filters are enforced server-side; arbitrary client mode/status parameters are ignored.
-            const params = new URLSearchParams({q: query.trim(), m: '0', s: 'ranked', sort, nsfw: 'true'})
+            const params = new URLSearchParams({q: query.trim(), m: '0', s: 'ranked', sort, nsfw: 'false'})
             if (cursor) params.set('cursor_string', cursor)
             const data = await api(`/beatmapsets/search?${params}`)
             if (!Array.isArray(data.beatmapsets)) throw new OsuError(502, 'OSU_INVALID_RESPONSE', 'osu! returned an unreadable search response. Please try again.')

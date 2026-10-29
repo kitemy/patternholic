@@ -23,7 +23,7 @@
         <BeatmapCover :src="data.coverUrl || data.cardCoverUrl" eager/>
         <div class="beatmap-hero-content">
           <div class="beatmap-hero-labels"><span class="ranked-badge"><AppIcon name="check"/> Ranked</span><span
-              class="filter-chip"><span class="standard-symbol" aria-hidden="true"></span> osu!standard</span><span v-if="data.explicit" class="explicit-badge">Explicit</span></div>
+              class="filter-chip"><span class="standard-symbol" aria-hidden="true"></span> osu!standard</span></div>
           <p class="beatmap-artist">{{ data.artist }}</p>
           <h1>{{ data.title }}</h1>
           <p class="beatmap-byline">Mapped by <a v-if="data.creatorId"

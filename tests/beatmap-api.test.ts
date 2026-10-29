@@ -26,11 +26,6 @@ function set(overrides: Record<string, unknown> = {}) {
 }
 
 describe('ranked standard library data', () => {
-    it('preserves explicit maps and marks only maps flagged by osu!', () => {
-        expect(normalizeBeatmapset(set({nsfw: true}))?.explicit).toBe(true)
-        expect(normalizeBeatmapset(set({nsfw: false}))?.explicit).toBe(false)
-        expect(normalizeBeatmapset(set())?.explicit).toBe(false)
-    })
     it('removes other modes, converts, and unranked difficulties even in a mixed set', () => {
         const result = normalizeBeatmapset(set({
             beatmaps: [
@@ -106,8 +101,7 @@ describe('osu! connection and routes', () => {
             q: 'Camellia',
             m: '0',
             s: 'ranked',
-            sort: 'plays_desc',
-            nsfw: 'true'
+            sort: 'plays_desc'
         })
         expect(new URL(request.mock.calls[2][0]).searchParams.get('cursor_string')).toBe('next-page')
         expect(request.mock.calls.filter(([url]) => String(url).endsWith('/oauth/token'))).toHaveLength(1)

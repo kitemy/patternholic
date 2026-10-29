@@ -25,7 +25,6 @@ export interface BeatmapDifficulty {
 }
 
 export interface Beatmapset {
-    explicit: boolean
     id: number
     title: string
     artist: string
